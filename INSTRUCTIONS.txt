@@ -1,0 +1,9 @@
+nest new --strict passwordless
+pnpm install passport @nestjs/passport passport-magic-login passport-jwt @nestjs/jwt class-validator class-transformer
+nest generate module users
+nest generate service users
+nest generate class users/user.entity --flat --no-spec
+nest generate resource auth
+nest generate class auth/magiclogin.strategy --flat --no-spec
+nest generate class auth/passwordless-login.dto --flat --no-spec
+nest generate class auth/jwt.strategy --flat --no-spec
