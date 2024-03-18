@@ -17,11 +17,19 @@ export class AuthService {
     };
   }
 
-  validateUser(mobilenumber: string) {
-    const user = this.userService.findOneByMobile(mobilenumber);
+  validateUser(mobilenumber: string, name?: string) {
+    if (!name) {
+      return this.userService.findUserByMobile(mobilenumber);
+    }
+    const existingUser: User = new User(name, mobilenumber);
+    const user = this.userService.findOrCreate(existingUser);
     if (!user) {
       throw new UnauthorizedException();
     }
     return user;
+  }
+
+  validateUserByMobile(mobile: string) {
+    return this.userService.findUserByMobile(mobile);
   }
 }

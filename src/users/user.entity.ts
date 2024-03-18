@@ -2,13 +2,17 @@ import {
   Column,
   CreateDateColumn,
   Entity,
- 
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('Users')
 export class User {
+  constructor(name: string, mobile: string) {
+    this.name = name;
+    this.mobile = mobile;
+  }
+
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -24,7 +28,7 @@ export class User {
   @Column({ nullable: true })
   @CreateDateColumn()
   created?: string; // date
-  
+
   @Column({ nullable: true })
   @UpdateDateColumn()
   updated?: string; // date
