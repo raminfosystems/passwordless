@@ -18,7 +18,7 @@ export class MagicloginStrategy extends PassportStrategy(Strategy) {
       sendMagicLink: async (destination: any, href: any) => {
         // 
         this.logger.debug(
-          `Send magic link to ${destination} with href ${href}`,
+          `Jwt token is ${process.env.JWT_SECRET_KEY} - Send magic link to ${destination} with href ${href} `,
         );
       },
       verify: async (

@@ -1,7 +1,7 @@
 import { Controller, Get, UseGuards, Req } from '@nestjs/common';
 import { AppService } from './app.service';
-import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
+import { JwtAuthGuard } from './auth/jwt.auth.guard';
 
 @Controller()
 export class AppController {
@@ -13,7 +13,7 @@ export class AppController {
   }
 
   // GET /protected required JWT Access Token
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(JwtAuthGuard)
   @Get('protected')
   getProtected(@Req() req: Request): string {
     return `You are in ${(<any>req.user).mobile}!`;
