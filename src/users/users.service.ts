@@ -11,8 +11,8 @@ export class UsersService {
     },
     {
       id: 2,
-      name: 'Chirag Kothari',
-      mobile: '919227777660',
+      name: 'Priti Lodhiya',
+      mobile: '447971671840',
     },
   ];
 
