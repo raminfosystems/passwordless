@@ -16,6 +16,6 @@ export class AppController {
   @UseGuards(JwtAuthGuard)
   @Get('protected')
   getProtected(@Req() req: Request): string {
-    return `You are in ${(<any>req.user).mobile}!`;
+    return `You are in ${(<any>req.user).name}!`;
   }
 }

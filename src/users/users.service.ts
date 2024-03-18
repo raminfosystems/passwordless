@@ -6,13 +6,13 @@ export class UsersService {
   private readonly users: User[] = [
     {
       id: 1,
-      name: 'John Doe',
+      name: 'Ravi Lodhiya',
       mobile: '447539383758',
     },
     {
       id: 2,
-      name: 'Jane Doe',
-      mobile: '12382873478374',
+      name: 'Chirag Kothari',
+      mobile: '919227777660',
     },
   ];
 
