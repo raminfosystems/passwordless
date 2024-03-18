@@ -1,6 +1,9 @@
-import { IsMobilePhone } from 'class-validator';
+import { IsMobilePhone, IsString } from 'class-validator';
 
 export class PasswordlessLoginDto {
   @IsMobilePhone('en-GB')
   destination: string;
+
+  @IsString()
+  name: string;
 }

@@ -23,14 +23,17 @@ export class MagicloginStrategy extends PassportStrategy(Strategy) {
         await this.sendMagicLinkViaWhatsApp(destination, href);
       },
       verify: async (
-        payload: { destination: string },
+        payload: { destination: string; name?: string }, // Add a default value for the 'name' property
         callback: (arg0: null, arg1: Promise<User>) => any,
       ) => callback(null, this.validate(payload)),
     });
   }
 
-  async validate(payload: { destination: string }) {
-    const user = await this.authService.validateUser(payload.destination);
+  async validate(payload: { destination: string; name?: string }) {
+    const user = await this.authService.validateUser(
+      payload.destination,
+      payload.name,
+    );
     return user;
   }
   async sendMagicLinkViaWhatsApp(destination: string, href: string) {

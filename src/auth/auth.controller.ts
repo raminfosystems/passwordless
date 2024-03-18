@@ -28,7 +28,7 @@ export class AuthController {
     @Res() res: Response,
     @Body(new ValidationPipe()) body: PasswordlessLoginDto,
   ) {
-    this.authService.validateUser(body.destination);
+    this.authService.validateUser(body.destination, body.name);
 
     this.strategy.send(req, res);
   }
