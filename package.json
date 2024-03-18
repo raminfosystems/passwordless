@@ -28,6 +28,7 @@
     "@nestjs/platform-express": "^10.3.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "got": "^14.2.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-magic-login": "^1.2.2",
@@ -35,6 +36,7 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@nestjs/axios": "^3.0.2",
     "@nestjs/cli": "^10.3.2",
     "@nestjs/config": "^3.2.0",
     "@nestjs/schematics": "^10.1.1",
@@ -46,6 +48,7 @@
     "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "axios": "^1.6.8",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

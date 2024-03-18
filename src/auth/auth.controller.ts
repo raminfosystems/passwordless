@@ -30,7 +30,6 @@ export class AuthController {
   ) {
     this.authService.validateUser(body.destination);
 
-    
     this.strategy.send(req, res);
   }
 

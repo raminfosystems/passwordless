@@ -6,6 +6,7 @@ import { MagicloginStrategy } from './magiclogin.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './jwt.strategy';
+import { WhatsAppModule } from 'src/whats-app/whats-app.module';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -17,6 +18,7 @@ dotenv.config();
       secret: process.env.JWT_SECRET_KEY,
       signOptions: { expiresIn: '1h' },
     }),
+    WhatsAppModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, MagicloginStrategy, JwtStrategy],
