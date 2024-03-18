@@ -7,3 +7,5 @@ nest generate resource auth
 nest generate class auth/magiclogin.strategy --flat --no-spec
 nest generate class auth/passwordless-login.dto --flat --no-spec
 nest generate class auth/jwt.strategy --flat --no-spec
+
+pnpm install sqlite3 --save
