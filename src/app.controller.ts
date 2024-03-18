@@ -5,7 +5,7 @@ import { Request } from 'express';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   getHello(): string {
@@ -16,8 +16,6 @@ export class AppController {
   @UseGuards(AuthGuard('jwt'))
   @Get('protected')
   getProtected(@Req() req: Request): string {
-    // TODO - JWT Access token required
-
     return `You are in ${(<any>req.user).mobile}!`;
   }
 }

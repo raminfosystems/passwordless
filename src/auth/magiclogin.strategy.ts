@@ -10,13 +10,13 @@ export class MagicloginStrategy extends PassportStrategy(Strategy) {
 
   constructor(private authService: AuthService) {
     super({
-      secret: 'secret', //process.env.MAGIC_SECRET,
+      secret: process.env.MAGIC_SECRET_KEY, 
       jwtOptions: {
         expiresIn: '5m',
       },
-      callbackUrl: 'http://localhost:3000/auth/login/callback', //process.env.MAGIC_CALLBACK_URL,
+      callbackUrl: process.env.MAGIC_CALLBACK_URL,
       sendMagicLink: async (destination: any, href: any) => {
-        // TODO - Send magic link
+        // 
         this.logger.debug(
           `Send magic link to ${destination} with href ${href}`,
         );

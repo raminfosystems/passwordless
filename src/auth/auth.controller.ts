@@ -30,7 +30,7 @@ export class AuthController {
   ) {
     this.authService.validateUser(body.destination);
 
-    // TODO - Send magic link
+    
     this.strategy.send(req, res);
   }
 
@@ -38,7 +38,6 @@ export class AuthController {
   @UseGuards(AuthGuard('magiclogin'))
   @Get('login/callback')
   callback(@Req() req: Request & { user: any }) {
-    // TODO - JWT Access Token
     return this.authService.generateTokens(req.user);
   }
 }
